@@ -36,6 +36,7 @@ class Auth(object):
             self.cookies = load_cookies
         else:
             self.request_login()
+            self.cookies = self.load_cookies()
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
@@ -46,13 +47,13 @@ class Auth(object):
         self.session.headers = headers
 
     def save_cookies(self):
-        self.cookies = {}
+        temp_cookies = {}
         for s_cookie in self.driver.get_cookies():
-            self.cookies[s_cookie["name"]] = s_cookie["value"]
+            temp_cookies[s_cookie["name"]] = s_cookie["value"]
 
         try:
             with open('s.json', 'w') as outfile:
-                json.dump(self.cookies, outfile)
+                json.dump(temp_cookies, outfile)
         except IOError:
             self.log('s.json does not exist')
 
