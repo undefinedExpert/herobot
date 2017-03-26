@@ -1,9 +1,8 @@
-from Bot import Bot
+from Bot.General import Bot
 
-mainUrl = 'https://legacy.hackerexperience.com'
-mainEndpoint = '/log'
 
-bot = Bot(mainUrl, mainEndpoint)
+
+bot = Bot()
 bot.start()
 
 # TODO: clean_log should also accept button
@@ -26,7 +25,7 @@ while not isEnd:
     answer = input('Run: ')
 
     if answer == '0':
-        bot.clear_log()
+        bot.run_clear_log()
 
     elif answer[0] == '/':
         bot.change_route(answer)
