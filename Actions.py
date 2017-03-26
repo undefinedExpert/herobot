@@ -27,16 +27,16 @@ class Actions(Clear_log):
         return hours * 3600 + minutes * 60 + seconds
 
     def get_time_left(self, process_id):
-        pattern = re.compile(r"Date\(\).getTime\(\)\+\d{0,4}\*\d{0,4}\)\;\$\('#" + process_id + "'\)", re.MULTILINE | re.DOTALL)
+        time_process_pattern = re.compile(r"Date\(\).getTime\(\)\+\d{0,4}\*\d{0,4}\)\;\$\('#" + process_id + "'\)", re.MULTILINE | re.DOTALL)
         time_pattern = re.compile(r"\d{0,4}\*\d{0,4}")
 
-        script = self.browser.find('script', text=pattern)
+        script = self.browser.find('script', text=time_process_pattern)
         if script:
-            matched_all = re.search(pattern, script.text)
+            matched_all = re.search(time_process_pattern, script.text)
             time = re.search(time_pattern, matched_all.group(0))
+
             if matched_all:
                 time_left = time.group(0).split('*')[0]
-
                 return int(time_left)
 
 
