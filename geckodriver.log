@@ -241,3 +241,50 @@ JavaScript error: https://legacy.hackerexperience.com/js/jquery.min.js.pagespeed
 [Parent 66448] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
 1490546123257	Marionette	INFO	New connections will no longer be accepted
 [Child 66296] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490552967169	geckodriver	INFO	Listening on 127.0.0.1:12837
+1490552969180	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.deh6xG4bqXQG
+1490552969185	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490552969191	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12843
+1490552969961	Marionette	INFO	Listening on port 12843
+1490552970372	Marionette	WARN	TLS certificate errors will be ignored for this session
+1490552996062	Marionette	INFO	New connections will no longer be accepted
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE40003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE40003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE40003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE40003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE40003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE40003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 69864] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490553079205	geckodriver	INFO	Listening on 127.0.0.1:12930
+1490553081220	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.Ns760shRNz37
+1490553081226	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490553081232	geckodriver::marionette	INFO	Connecting to Marionette on localhost:12936
+1490553081985	Marionette	INFO	Listening on port 12936
+1490553082377	Marionette	WARN	TLS certificate errors will be ignored for this session
+1490553099618	Marionette	INFO	New connections will no longer be accepted
+[Child 69504] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143

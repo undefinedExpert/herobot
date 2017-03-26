@@ -1,11 +1,14 @@
 from robobrowser import RoboBrowser
+from Shared import Shared
 
 
-class Browser(object):
+class Browser(Shared):
     def __init__(self):
         self.browser = None
         self.session = None
         self.cookies = None
+
+        super().__init__()
 
     def change_route(self, end_point):
         self.set_url_endpoint(end_point)
@@ -14,10 +17,10 @@ class Browser(object):
         self.log_urls()
 
     def open(self):
-        self.browser.open(self.fullUrl)
+        self.browser.open(self.full_url)
 
     def build_url(self):
-        self.fullUrl = self.url + self.endpoint
+        self.full_url = self.url + self.endpoint
 
     def set_url_endpoint(self, next_endpoint):
         self.endpoint = next_endpoint
@@ -26,7 +29,7 @@ class Browser(object):
     def log_urls(self, custom=None):
         print('\n------ URLS STATUS -------')
         print('Current url: %s' % self.browser.url)
-        print('Full url: %s' % self.fullUrl)
+        print('Full url: %s' % self.full_url)
         print('Endpoint url: %s' % self.endpoint)
 
         if custom:
@@ -37,4 +40,5 @@ class Browser(object):
     def create_connection(self):
         self.log('Creating connection')
         self.browser = RoboBrowser(history=True, parser='html.parser', session=self.session)
-        self.browser.open(self.fullUrl, cookies=self.cookies)
+        self.browser.open(self.full_url, cookies=self.cookies)
+        Shared.browser = self.browser

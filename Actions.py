@@ -4,14 +4,14 @@ from interactions.Clear_log import Clear_log
 from Shared import Shared
 
 
-class Actions(Shared, Clear_log):
+class Actions(Shared):
     def __init__(self):
-        super(Shared).__init__()
+        super(Shared, self).__init__()
 
-        Clear_log.__init__(self)
+        self._clear_log = Clear_log()
 
     def clear_log(self):
-        self.run()
+        self._clear_log.run()
 
     def verify_endpoint(self, endpoint, err_msg='Failed to establish endpoint'):
         if self.endpoint == endpoint:

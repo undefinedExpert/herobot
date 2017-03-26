@@ -10,10 +10,14 @@ from Shared import Shared
 
 class Auth(Shared):
     def __init__(self):
-        Shared.cookies = None
+        self.cookies = None
         self.auth_fail = False
         self.driver = None
+
         super().__init__()
+
+        print('Auth: %s' % self.url)
+
 
     def request_login(self):
         self.driver = webdriver.Firefox()
@@ -32,19 +36,19 @@ class Auth(Shared):
     def configure_session(self):
         load_cookies = self.load_cookies()
 
-        if load_cookies and not Shared.cookies and not self.auth_fail:
+        if load_cookies and not self.cookies and not self.auth_fail:
             self.log('Restoring cookies')
-            Shared.cookies = load_cookies
+            self.cookies = load_cookies
         else:
             self.request_login()
-            Shared.cookies = self.load_cookies()
+            self.cookies = self.load_cookies()
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
 
         self.session = requests.Session()
-        self.session.get(self.fullUrl, headers=headers)
-        self.session.cookies = Shared.cookies
+        self.session.get(self.full_url, headers=headers)
+        self.session.cookies = self.cookies
         self.session.headers = headers
 
     def save_cookies(self):
@@ -76,7 +80,7 @@ class Auth(Shared):
             return False
 
     def verify_auth(self):
-        if self.browser.url == self.fullUrl:
+        if self.browser.url == self.full_url:
             self.log('Authorization successful')
             self.auth_fail = False
         else:
