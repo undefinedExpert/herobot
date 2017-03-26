@@ -1,6 +1,6 @@
 import re
 
-from Bot.interactions.ClearLog import ClearLog
+from Bot.sequences.ClearLog import ClearLog
 
 
 class Actions(ClearLog):

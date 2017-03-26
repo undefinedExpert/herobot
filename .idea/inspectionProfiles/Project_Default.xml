@@ -12,6 +12,9 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="Bot.interactions.ClearLog.ClearLog.*" />
+          <option value="Bot.Actions.Actions.browser" />
+          <option value="Bot.Actions.Actions.log" />
+          <option value="Bot.Actions.Actions.endpoint" />
         </list>
       </option>
     </inspection_tool>
