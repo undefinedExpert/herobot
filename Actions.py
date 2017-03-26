@@ -1,11 +1,14 @@
 import re
 from interactions.Clear_log import Clear_log
 
+from Shared import Shared
 
-class Actions(Clear_log):
+
+class Actions(Shared, Clear_log):
     def __init__(self):
+        super(Shared).__init__()
+
         Clear_log.__init__(self)
-        pass
 
     def clear_log(self):
         self.run()

@@ -232,3 +232,12 @@ JavaScript error: https://legacy.hackerexperience.com/js/jquery.min.js.pagespeed
 [Parent 63956] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
 1490544400398	Marionette	INFO	New connections will no longer be accepted
 [Child 56940] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490546073477	geckodriver	INFO	Listening on 127.0.0.1:11672
+1490546075488	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.zicH9nX9dQ5b
+1490546075493	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490546075499	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11678
+1490546076273	Marionette	INFO	Listening on port 11678
+1490546076667	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 66448] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+1490546123257	Marionette	INFO	New connections will no longer be accepted
+[Child 66296] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143

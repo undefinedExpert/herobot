@@ -7,3 +7,5 @@ class Config(object):
         self.session = None
         self.cookies = None
 
+    
+

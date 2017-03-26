@@ -5,14 +5,15 @@ from selenium.webdriver.support import expected_conditions as EC
 import json
 import requests
 
-from Config import Config
+from Shared import Shared
 
 
-class Auth(object):
+class Auth(Shared):
     def __init__(self):
-        self.cookies = None
+        Shared.cookies = None
         self.auth_fail = False
         self.driver = None
+        super().__init__()
 
     def request_login(self):
         self.driver = webdriver.Firefox()
@@ -31,19 +32,19 @@ class Auth(object):
     def configure_session(self):
         load_cookies = self.load_cookies()
 
-        if load_cookies and not self.cookies and not self.auth_fail:
+        if load_cookies and not Shared.cookies and not self.auth_fail:
             self.log('Restoring cookies')
-            self.cookies = load_cookies
+            Shared.cookies = load_cookies
         else:
             self.request_login()
-            self.cookies = self.load_cookies()
+            Shared.cookies = self.load_cookies()
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
 
         self.session = requests.Session()
         self.session.get(self.fullUrl, headers=headers)
-        self.session.cookies = self.cookies
+        self.session.cookies = Shared.cookies
         self.session.headers = headers
 
     def save_cookies(self):
