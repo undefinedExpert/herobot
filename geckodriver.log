@@ -157,3 +157,78 @@ JavaScript error: https://legacy.hackerexperience.com/js/jquery.min.js.pagespeed
 1490479781240	Marionette	WARN	TLS certificate errors will be ignored for this session
 1490479804590	Marionette	INFO	New connections will no longer be accepted
 [Child 17584] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490526470728	geckodriver	INFO	Listening on 127.0.0.1:9664
+1490526472730	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.uzHcdPrmLlXg
+1490526472736	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490526472742	geckodriver::marionette	INFO	Connecting to Marionette on localhost:9670
+1490526473568	Marionette	INFO	Listening on port 9670
+1490526474401	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 45876] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Parent 45876] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Parent 45876] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Parent 45876] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+1490526531654	Marionette	INFO	New connections will no longer be accepted
+[Child 51320] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490534456546	geckodriver	INFO	Listening on 127.0.0.1:10755
+1490534458560	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.Wkf6rz773B7F
+1490534458569	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490534458575	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10761
+1490534459979	Marionette	INFO	Listening on port 10761
+1490534460382	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 51592] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Parent 51592] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+1490534515918	Marionette	INFO	New connections will no longer be accepted
+[Child 50348] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490537725924	geckodriver	INFO	Listening on 127.0.0.1:11394
+1490537727943	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.7tj3EVkFXg0t
+1490537727949	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490537727954	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11400
+1490537728574	Marionette	INFO	Listening on port 11400
+1490537728978	Marionette	WARN	TLS certificate errors will be ignored for this session
+1490537757592	Marionette	INFO	New connections will no longer be accepted
+[Child 61392] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490543795886	geckodriver	INFO	Listening on 127.0.0.1:10742
+1490543797897	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.jJkfBYDVzs9w
+1490543797903	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490543797909	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10749
+1490543798533	Marionette	INFO	Listening on port 10749
+1490543798926	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 59340] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Parent 59340] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+1490543868428	Marionette	INFO	New connections will no longer be accepted
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+[Child 63720] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x900001,name=PLayer::Msg___delete__) Channel error: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel error: cannot send/recv
+
+1490544083475	geckodriver	INFO	Listening on 127.0.0.1:10947
+1490544085491	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.eMFo8M6rieid
+1490544085497	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490544085503	geckodriver::marionette	INFO	Connecting to Marionette on localhost:10953
+1490544086095	Marionette	INFO	Listening on port 10953
+1490544086539	Marionette	WARN	TLS certificate errors will be ignored for this session
+1490544103422	geckodriver	INFO	Listening on 127.0.0.1:10999
+1490544105444	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.GxoAE7CWKYCc
+1490544105448	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490544105454	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11005
+1490544106055	Marionette	INFO	Listening on port 11005
+1490544106500	Marionette	WARN	TLS certificate errors will be ignored for this session
+1490544126973	Marionette	INFO	New connections will no longer be accepted
+[Child 63816] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490544379538	geckodriver	INFO	Listening on 127.0.0.1:11077
+1490544381553	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.kieI2otkixrQ
+1490544381557	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1490544381564	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11083
+1490544382163	Marionette	INFO	Listening on port 11083
+1490544382613	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 63956] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+1490544400398	Marionette	INFO	New connections will no longer be accepted
+[Child 56940] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
