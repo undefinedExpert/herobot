@@ -7,7 +7,7 @@ bot.start()
 
 # TODO: clean_log should also accept button
 # TODO: Work on a project structure, class hierarchy, class inheritance
-# TODO: Fix problem with extracing cookies from session where user didn't have any cookies at all, or they changed
+# TODO: Fix problem with extracting cookies from session where user didn't have any cookies at all, or they changed
 #       AttributeError: 'dict' object has no attribute 'extract_cookies'
 isEnd = False
 while not isEnd:

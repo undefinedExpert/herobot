@@ -8,9 +8,6 @@ class Bot(Auth, Browser, Shared, Actions):
     def __init__(self):
         super().__init__()
 
-        print('Bot MRO')
-        print(Bot.__mro__)
-
     def start(self):
         self.configure_session()
         self.create_connection()

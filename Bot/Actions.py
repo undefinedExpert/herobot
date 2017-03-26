@@ -5,8 +5,6 @@ from Bot.interactions.ClearLog import ClearLog
 
 class Actions(ClearLog):
     def __init__(self):
-        print('Actions mro')
-        print(Actions.__mro__)
         super().__init__()
 
     def verify_endpoint(self, endpoint, err_msg='Failed to establish endpoint'):

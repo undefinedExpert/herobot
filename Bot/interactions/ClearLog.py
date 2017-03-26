@@ -1,16 +1,11 @@
 class ClearLog:
-    def __init__(self):
-        super().__init__()
-        print('ClearLog mro')
-        print(ClearLog.__mro__)
-        self.route_required = '/log'
+    route_required = '/log'
 
     '''
         - It changes route to /log
         - It changes the log textarea to eql 'test'
         - it submits form and confirms when
     '''
-
     def run_clear_log(self):
         self.__run()
 
