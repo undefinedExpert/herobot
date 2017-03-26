@@ -14,10 +14,9 @@ isEnd = False
 while not isEnd:
     commands = [
         'clear_log',
-        'reauth',
-        'open',
-        'log_urls',
         '/next_endpoint',
+        'reauth',
+        'log_urls',
         'end'
     ]
     print('\nRun one of following commands:')
@@ -26,24 +25,18 @@ while not isEnd:
 
     answer = input('Run: ')
 
-    if answer == 'clear_log':
+    if answer == '0':
         bot.clear_log()
 
-    elif answer == 'open':
-        bot.open()
-
     elif answer[0] == '/':
-        bot.set_url_endpoint(answer)
+        bot.change_route(answer)
 
-    elif answer == 'load_cookies':
-        bot.load_cookies()
-
-    elif answer == 'reauth':
+    elif answer == '2':
         bot.start()
 
-    elif answer == 'log_urls':
+    elif answer == '3':
         bot.log_urls()
 
-    elif answer == 'end':
+    elif answer == '4':
         isEnd = True
 
