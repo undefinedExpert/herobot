@@ -1,36 +1,69 @@
 class Clear_log(object):
     def __init__(self):
-        self.endpoint = '/log'
+        self.route_required = '/log'
 
+    '''
+        - It changes route to /log
+        - It changes the log textarea to eql 'test'
+        - it submits form and confirms when
+    '''
     def run(self):
-        self.verify_endpoint(self.endpoint)
+        # >verify endpoint
+        if self.verify_endpoint(self.route_required):
+            self.log('moving to %s' % self.route_required)
+            self.change_route('/log')
+        else:
+            self.log('refreshing %s' % self.route_required)
+            self.change_route('/log')
 
-        form = self.browser.get_form(action='logEdit')
+        # >get form
+        # >fill the form
+        # >send the form
+        form = self.get_form()
         log_area = form['log']
+
+        if log_area.value == 'test':
+            self.log('Log is already removed')
+            return
+
         log_area.value = 'test'
-
         self.browser.submit_form(form)
-        self.log('log has been changed to %s' % log_area.value)
 
-        self.log('moving to task manager and accepting button')
+        # >go to task route
         self.change_route('/processes?page=cpu')
 
+        # >get list of processes
         process_list = self.browser.find_all("ul", class_="list")
 
+        # iterate over process list
         print('length of process_list %s' % len(process_list))
         for process in process_list:
+            # get each process description
             description = process.select('.proc-desc')[0].text
 
+            # if description match Edit log message
             if description == 'Edit log at localhost':
-                self.log('znalazlem description edit log!!')
-                # TODO: Zrobic by to dzialalo!!! narazie nie dziala xD
-                # complete_form = process.get_form(method_='GET')
-                # self.browser.submit_form(complete_form)
-                # teraz powinnienem kliknac w tym procesie
-                # button!!
 
-        self.log('sleep for 10 seconds')
-        self.sleep_for(10)
+                # then select process id
+                process_id = process.select('.proc-desc')[0].parent.attrs['class'][1].replace('Block', '')
 
-        self.log('moving to software page')
-        self.open()
+                # get time left from process
+                time = self.get_time_left(process_id)
+
+                # if process isn't completed yet
+                if time > 0:
+                    self.log('task time left: %ss' % time)
+                    self.log('sleeping for: %ss' % time)
+                    # then we sleep this time
+                    self.sleep_for(time)
+
+                # we move to appropriate endpoint with an id of our process, so we could finish this process
+                # /processes?pid=32957978 complete endpoint
+                complete_route = '/processes?pid=%s' % process_id.replace('process', '')
+                self.change_route(complete_route)
+
+                self.log('Log cleaning completed')
+
+
+    def get_form(self):
+        return self.browser.get_form(action='logEdit')

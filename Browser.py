@@ -11,6 +11,7 @@ class Browser(object):
         self.set_url_endpoint(end_point)
         self.build_url()
         self.open()
+        self.log_urls()
 
     def open(self):
         self.browser.open(self.fullUrl)
@@ -21,7 +22,6 @@ class Browser(object):
     def set_url_endpoint(self, next_endpoint):
         self.endpoint = next_endpoint
         self.build_url()
-        self.log_urls()
 
     def log_urls(self, custom=None):
         print('\n------ URLS STATUS -------')
