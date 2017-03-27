@@ -1,12 +1,18 @@
+from Bot.Shared import adapter
 from Bot.interactions.GetLogForm import GetLogForm
 from Bot.interactions.CompleteTask import CompleteTask
 
+# ta klasa powinna miec dostep do czego?
+# do shared
+# oraz powinna tworzyc insancje swoich interackji
 
-class ClearLog(GetLogForm, CompleteTask):
+
+class ClearLog:
     route_required = '/log'
 
     def __init__(self):
-        super().__init__()
+        self.log_form = GetLogForm()
+        self.complete_task = CompleteTask()
 
     '''
         - It changes route to /log
@@ -14,25 +20,24 @@ class ClearLog(GetLogForm, CompleteTask):
         - it submits form and confirms when
     '''
 
-    def run_clear_log(self):
-        self.__run()
-
-    def __run(self):
+    def run(self):
         # >verify endpoint
-        if self.verify_endpoint(self.route_required):
-            self.log('moving to %s' % self.route_required)
-            self.change_route('/log')
+        if adapter.verify_endpoint(self.route_required):
+            adapter.log('moving to %s' % self.route_required)
+            adapter.browser.change_route('/log', silent=True)
         else:
-            self.log('refreshing %s' % self.route_required)
-            self.change_route('/log')
+            adapter.log('refreshing %s' % self.route_required)
+            adapter.browser.change_route('/log', silent=True)
 
         # >get form
         # >fill the form
         # >send the form
-        self.change_form()
+        self.log_form.run()
 
         # >go to task route
-        self.change_route('/processes?page=cpu')
+        adapter.browser.change_route('/processes?page=cpu', silent=True)
 
         # >Complete task
-        self.complete_task()
+        self.complete_task.run()
+
+

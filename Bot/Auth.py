@@ -5,18 +5,13 @@ from selenium.webdriver.support import expected_conditions as EC
 import json
 import requests
 
-from Bot.Shared import Shared
 
-
-class Auth(Shared):
+class Auth:
     auth_fail = False
     driver = None
 
     def __init__(self):
-        super().__init__()
-
         print('Auth: %s' % self.url)
-
 
     def request_login(self):
         self.driver = webdriver.Firefox()
@@ -79,7 +74,7 @@ class Auth(Shared):
             return False
 
     def verify_auth(self):
-        if self.browser.url == self.full_url:
+        if self.window.url == self.full_url:
             self.log('Authorization successful')
             self.auth_fail = False
         else:

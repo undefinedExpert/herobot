@@ -25,7 +25,7 @@ while not isEnd:
     answer = input('Run: ')
 
     if answer == '0':
-        bot.run_clear_log()
+        bot.clear_log()
 
     elif answer[0] == '/':
         bot.change_route(answer)

@@ -1,16 +1,16 @@
-from Bot.Auth import Auth
-from Bot.Browser import Browser
 from Bot.Actions import Actions
-from Bot.Shared import Shared
+from Bot.Shared import adapter
 
 
-class Bot(Auth, Browser, Shared, Actions):
+class Bot(Actions):
     def __init__(self):
+        self.shared = adapter.shared
+        self.browser = adapter.browser
+        self.window = None
         super().__init__()
 
     def start(self):
-        self.configure_session()
-        self.create_connection()
-        self.verify_auth()
-        self.log_urls()
-
+        self.browser.configure_session()
+        self.browser.create_connection()
+        self.browser.verify_auth()
+        self.browser.log_urls()
