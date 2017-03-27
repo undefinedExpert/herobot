@@ -77,7 +77,8 @@ class CompleteTask:
 
         return hours * 3600 + minutes * 60 + seconds
 
-    def get_time_left(self, process_id):
+    @staticmethod
+    def get_time_left(process_id):
         time_process_pattern = re.compile(r"Date\(\).getTime\(\)\+\d{0,4}\*\d{0,4}\)\;\$\('#" + process_id + "'\)",
                                           re.MULTILINE | re.DOTALL)
         time_pattern = re.compile(r"\d{0,4}\*\d{0,4}")

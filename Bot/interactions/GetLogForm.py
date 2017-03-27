@@ -20,4 +20,3 @@ class GetLogForm:
 
     def __get_form(self):
         return adapter.window.get_form(action=self.which_form)
-
