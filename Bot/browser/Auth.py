@@ -5,13 +5,16 @@ from selenium.webdriver.support import expected_conditions as EC
 import json
 import requests
 
+import os
+from Bot.definitions import TEMP_PATH
+
 
 class Auth:
     auth_fail = False
     driver = None
 
     def __init__(self):
-        print('Auth: %s' % self.url)
+        self.cookies_path = os.path.join(TEMP_PATH, 'cookies.json')
 
     def request_login(self):
         self.driver = webdriver.Firefox()
@@ -51,19 +54,23 @@ class Auth:
             temp_cookies[s_cookie["name"]] = s_cookie["value"]
 
         try:
-            with open('s.json', 'w') as outfile:
+
+            if not os.path.exists(TEMP_PATH):
+                os.makedirs(TEMP_PATH)
+
+            with open(self.cookies_path, 'w+') as outfile:
                 json.dump(temp_cookies, outfile)
+
         except IOError:
-            self.log('s.json does not exist')
+            self.log('Unexpected error appear while reading cookies file')
 
     def load_cookies(self):
         try:
-            with open('s.json', encoding='utf-8') as data_file:
-                self.log('Loading cookies')
-
+            with open(self.cookies_path, encoding='utf-8') as data_file:
                 try:
                     data = json.loads(data_file.read())
                     cookies_jar = requests.utils.cookiejar_from_dict(data)
+                    self.log('Cookies restored')
                     return cookies_jar
                 except ValueError:
                     self.log('No previous session found')
@@ -80,4 +87,3 @@ class Auth:
         else:
             self.log('failed to login')
             self.auth_fail = True
-

@@ -1,14 +1,9 @@
 from Bot.General import Bot
 
-
-
 bot = Bot()
 bot.start()
 
-# TODO: clean_log should also accept button
-# TODO: Work on a project structure, class hierarchy, class inheritance
-# TODO: Fix problem with extracting cookies from session where user didn't have any cookies at all, or they changed
-#       AttributeError: 'dict' object has no attribute 'extract_cookies'
+# TODO: Usuwanie loga podczas gdy istnieja inne procesy (wiecej niz 1)
 isEnd = False
 while not isEnd:
     commands = [

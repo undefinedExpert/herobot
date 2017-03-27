@@ -1,9 +1,8 @@
 from time import sleep
-from Bot.Browser import Browser
+from Bot.browser.Browser import Browser
 
 
-# It should share only the browser window instance
-# we should also create share class for methods prepared for interactions
+# TODO: Remove Methods and make this class Abstract
 class Shared:
     def __init__(self):
         self.url = 'https://legacy.hackerexperience.com'
@@ -31,6 +30,7 @@ class Shared:
             return True
 
 
+# TODO: Rename to WebAdapter
 class AdapterShared:
     def __init__(self):
         self.shared = Shared()

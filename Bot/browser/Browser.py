@@ -1,5 +1,6 @@
 from robobrowser import RoboBrowser
-from Bot.Auth import Auth
+
+from Bot.browser.Auth import Auth
 
 
 class Browser(Auth):

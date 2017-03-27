@@ -57,7 +57,7 @@ class CompleteTask:
             complete_route = '/processes?pid=%s' % self.process_id.replace('process', '')
             adapter.browser.change_route(complete_route, silent=True)
 
-            # FIXME: There is a problem with context of self in method log, temp fix
+            # FIXME: There is a problem with context of self in method log, tmp fix
             # task_done_msg = self.msg['task_done']
             adapter.log(self.msgs['task_done'])
 
