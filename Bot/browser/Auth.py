@@ -2,19 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import json
+
 import requests
-
-import os
-from Bot.definitions import TEMP_PATH
-
 
 class Auth:
     auth_fail = False
     driver = None
-
-    def __init__(self):
-        self.cookies_path = os.path.join(TEMP_PATH, 'cookies.json')
 
     def request_login(self):
         self.driver = webdriver.Firefox()
@@ -47,38 +40,6 @@ class Auth:
         self.session.get(self.full_url, headers=headers)
         self.session.cookies = self.cookies
         self.session.headers = headers
-
-    def save_cookies(self):
-        temp_cookies = {}
-        for s_cookie in self.driver.get_cookies():
-            temp_cookies[s_cookie["name"]] = s_cookie["value"]
-
-        try:
-
-            if not os.path.exists(TEMP_PATH):
-                os.makedirs(TEMP_PATH)
-
-            with open(self.cookies_path, 'w+') as outfile:
-                json.dump(temp_cookies, outfile)
-
-        except IOError:
-            self.log('Unexpected error appear while reading cookies file')
-
-    def load_cookies(self):
-        try:
-            with open(self.cookies_path, encoding='utf-8') as data_file:
-                try:
-                    data = json.loads(data_file.read())
-                    cookies_jar = requests.utils.cookiejar_from_dict(data)
-                    self.log('Cookies restored')
-                    return cookies_jar
-                except ValueError:
-                    self.log('No previous session found')
-                    return False
-
-        except IOError:
-            self.log('There is no previous cookies')
-            return False
 
     def verify_auth(self):
         if self.window.url == self.full_url:

@@ -14,3 +14,17 @@ class Bot(Actions):
         self.browser.create_connection()
         self.browser.verify_auth()
         self.browser.log_urls()
+
+    def log_urls(self):
+        self.browser.log_urls(silent=False)
+
+    def change_route(self, route, silent):
+        self.browser.change_route(route, silent=silent)
+
+    def save_cookies(self):
+        self.browser.save_cookies(cookies=True)
+
+    def display_cookies(self):
+        print(self.browser.session.cookies)
+        print(self.browser.session.cookies.get('ip-data'))
+

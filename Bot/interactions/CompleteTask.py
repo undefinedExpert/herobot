@@ -42,7 +42,7 @@ class CompleteTask:
         description = process.select('.proc-desc')[0].text
 
         # if description match Edit log message
-        if description == 'Edit log at localhost':
+        if description == self.which_task:
 
             # then select process id
             self.process_id = process.select('.proc-desc')[0].parent.attrs['class'][1].replace('Block', '')

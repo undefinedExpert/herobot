@@ -24,10 +24,10 @@ class ClearLog:
         # >verify endpoint
         if adapter.verify_endpoint(self.route_required):
             adapter.log('moving to %s' % self.route_required)
-            adapter.browser.change_route('/log', silent=True)
+            adapter.browser.change_route(self.route_required)
         else:
             adapter.log('refreshing %s' % self.route_required)
-            adapter.browser.change_route('/log', silent=True)
+            adapter.browser.change_route(self.route_required)
 
         # >get form
         # >fill the form
@@ -35,7 +35,7 @@ class ClearLog:
         self.log_form.run()
 
         # >go to task route
-        adapter.browser.change_route('/processes?page=cpu', silent=True)
+        adapter.browser.change_route('/processes?page=cpu')
 
         # >Complete task
         self.complete_task.run()
