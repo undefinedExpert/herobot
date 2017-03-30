@@ -44,6 +44,10 @@ class Browser(Auth):
 
             print('---------- END -----------\n')
 
+    def open(self, endpoint, method="get", data=''):
+        url = self.url + endpoint
+        self.window.open(url, method=method, data=data)
+
     def create_connection(self):
         if not self.session or not self.cookies:
             self.log('Could not establish session, or cookies.')

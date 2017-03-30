@@ -4,14 +4,15 @@ from Bot.interactions.GetLogForm import GetLogForm
 from Bot.interactions.CompleteTask import CompleteTask
 
 class InvadeIp:
-    target_ip = '35.64.209.59'
+    # target_ip = '35.64.209.59'
+    target_ip = '189.183.90.35'
     hack_method = 'bf'
     route_required = '/internet'
 
     def __init__(self):
         # self.log_form = GetLogForm()
         self.connection = Connection()
-        self.log_form = GetLogForm()
+        self.log_form = GetLogForm(value='kutasiarze, chuj w dupsko')
 
         task_desc = 'Edit log at %s' % self.target_ip
         self.complete_task = CompleteTask(task_desc=task_desc)
@@ -33,6 +34,16 @@ class InvadeIp:
             return False
 
         self.clear_enemy_log()
+
+        # check enemy machine (network speed, disk space, apps installed)
+        # save collected data
+        # upload software,
+        # wait until uploaded software done
+        # run this software
+        # remove log
+
+    def disconnect(self):
+        self.connection.disconnect()
 
     def clear_enemy_log(self):
         # TODO: Analyse enemy log, check if he might be online

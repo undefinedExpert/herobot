@@ -42,6 +42,9 @@ while not isEnd:
     elif answer == 'save_cookies':
         bot.save_cookies()
 
+    elif answer == 'disconnect':
+        bot.disconnect_ip()
+
     elif answer == 'display_cookies':
         bot.display_cookies()
 

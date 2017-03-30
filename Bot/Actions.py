@@ -12,3 +12,6 @@ class Actions:
 
     def invade_ip(self):
         self._invade_ip.run()
+
+    def disconnect_ip(self):
+        self._invade_ip.disconnect()

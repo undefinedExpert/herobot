@@ -8,15 +8,21 @@ class GetLogForm:
         self.value = value
 
     def run(self):
-        form = self.__get_form()
-        log_area = form['log']
+        try:
+            form = self.__get_form()
+            log_area = form['log']
+        except TypeError:
+            adapter.log('Log form wasn\'t found')
+            return False
 
         if log_area.value == self.value:
             adapter.log('Log already removed')
-            return
+            return False
 
         log_area.value = self.value
         adapter.window.submit_form(form)
+
+        return True
 
     def __get_form(self):
         return adapter.window.get_form(action=self.which_form)
