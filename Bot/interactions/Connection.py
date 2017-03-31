@@ -34,9 +34,11 @@ class Connection:
         upcoming_route = "/internet?ip=%s" % self.target
         adapter.browser.change_route(upcoming_route, silent=False)
 
+        #TODO: Handle exception when we are logged into other ip adress and we wish to log to another
+
         # if ip not exist
-        ip_not_exist = adapter.window.select('.widget-content.padding.noborder > a')[0].text
-        if ip_not_exist == 'Back to First Whois':
+        ip_not_exist = adapter.window.select('.widget-content.padding.noborder > a')
+        if len(ip_not_exist) > 0 and ip_not_exist[0].text == 'Back to First Whois':
             adapter.log('%s does not exist' % self.target)
             return False
 

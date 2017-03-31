@@ -2,10 +2,11 @@ from Bot.Shared import adapter
 from Bot.interactions.Connection import Connection
 from Bot.interactions.GetLogForm import GetLogForm
 from Bot.interactions.CompleteTask import CompleteTask
+from Bot.interactions.ServerAnalyse import ServerAnalyse
 
 class InvadeIp:
     # target_ip = '35.64.209.59'
-    target_ip = '189.183.90.35'
+    target_ip = '35.64.209.59'
     hack_method = 'bf'
     route_required = '/internet'
 
@@ -13,6 +14,7 @@ class InvadeIp:
         # self.log_form = GetLogForm()
         self.connection = Connection()
         self.log_form = GetLogForm(value='kutasiarze, chuj w dupsko')
+        self.server_analyse = ServerAnalyse()
 
         task_desc = 'Edit log at %s' % self.target_ip
         self.complete_task = CompleteTask(task_desc=task_desc)
@@ -35,12 +37,14 @@ class InvadeIp:
 
         self.clear_enemy_log()
 
+        self.server_analyse.analyse()
+
         # check enemy machine (network speed, disk space, apps installed)
         # save collected data
         # upload software,
         # wait until uploaded software done
         # run this software
-        # remove log
+        # remove only those information which contian my ip
 
     def disconnect(self):
         self.connection.disconnect()

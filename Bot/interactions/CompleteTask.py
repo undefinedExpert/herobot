@@ -37,8 +37,7 @@ class CompleteTask:
         for process in process_list:
             print('test')
             self.complete_process(process)
-        else:
-            adapter.log('No process found')
+
 
     def complete_process(self, process):
         # get each process description
