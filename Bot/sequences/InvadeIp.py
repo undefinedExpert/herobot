@@ -6,7 +6,7 @@ from Bot.interactions.ServerAnalyse import ServerAnalyse
 
 class InvadeIp:
     # target_ip = '35.64.209.59'
-    target_ip = '35.64.209.59'
+    target_ip = '241.151.9.102'
     hack_method = 'bf'
     route_required = '/internet'
 

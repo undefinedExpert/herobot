@@ -33,8 +33,10 @@ class ServerAnalyse:
         hdd = self.get_hdd()
         adapter.log(hdd)
         network = self.get_internet_connection()
-        # software = self.get_software_names()
-        print('%s space and free is %s, with network connection of %s' % (hdd['all'], hdd['free'], network))
+        software = self.get_software_names()
+
+        adapter.log('Server information collected')
+        return {hdd: hdd, network: network, software: software}
 
 
     def get_hdd(self):
@@ -49,11 +51,13 @@ class ServerAnalyse:
             stripped.append(whitespace_removed)
 
         hd_space = stripped[1]
-        hd_free = stripped[0]
+        hd_taken = stripped[0]
+        hd_free = self.calc_hdd_taken(hd_space, hd_taken)
 
-        return {'all': hd_space, 'free': hd_free}
+        return {'all': hd_space, 'free': hd_free, 'taken': hd_taken}
 
-    def get_internet_connection(self):
+    @staticmethod
+    def get_internet_connection():
         software = adapter.window.find('div', id='softwarebar')
         network = software.select('span.small strong')[0].text
 
@@ -61,10 +65,139 @@ class ServerAnalyse:
 
 
     def get_software_names(self):
-        pass
+        # TODO: Get all the list of software
+        # TODO: Mark software if they are installed on mine
+        # TODO: Return a list of consist software list, each with version, name, size, type (e.g spam virus)
+        all_soft = []
+        # schema = {
+        #     "name": '',
+        #     "version": 1.0,
+        #     "type": '',
+        #     "extension": '',
+        #     "size": '150MB',
+        #     "marks": {
+        #         'installed': False,
+        #         'hidden': False,
+        #         'my_own': False,
+        #     },
+        #     'software_id': 0
+        # }
+        # handle exception when there is no softs
+
+        software = adapter.window.select('.table-software tbody tr')
+        for soft in software:
+            # <i> installed by me
+            cls = soft.attrs['class']
+            installed = False
+            my_own = False
+            app_name = ''
+            app_type = ''
+            app_version = ''
+            app_size = ''
+
+            if 'installed' in cls:
+                installed = True
+
+            content = soft.contents
+
+            # find type
+            if content[1].find('span') is not None:
+                app_type = content[1].find('span').attrs['title']
+
+            # find name
+            if content[3].find('b') is not None:
+                test = content[3].find('b')
+                app_name = content[3].find('b').text
+
+            elif content[3].find('i') is not None:
+                app_name = content[3].find('i').text
+                my_own = True
+
+            elif content[3].text:
+                app_name = content[3].text.replace('\n', '')
+
+            # find version
+            if content[5].find('font') is not None:
+                app_version = content[5].find('font').text
+
+            # find size
+            if content[7].find('font') is not None:
+                app_size = content[7].find('font').text
+
+            all_soft.append({
+                "name": app_name,
+                "type": app_type,
+                "version": app_version,
+                "size": app_size,
+                "installed": installed,
+                "my_own": my_own,
+            })
+
+        return all_soft
+
+
 
     def save_server_information(self):
+        adapter.log('Server information saved in database')
+
         pass
+
+    def filter_new_lines(self, array):
+        temp = []
+        for item in array:
+            if '\n' in item:
+                continue
+            else:
+                temp.append(item)
+
+        return temp
+
+    def calc_hdd_taken(self, all, taken):
+        # check if mb or gb
+        # if all contains gb multiply by 1000
+        # if all contains tb multiply by 1000000
+        # calc difference between all and taken, receive result in mb
+        # divide mb on gb
+        # if greater then 1000, divide by another 1000 and add tb
+        all_space_mb = self.get_mb_int(all)
+        taken_space = self.get_mb_int(taken)
+
+        difference = self.convert_to_highest(all_space_mb - taken_space)
+
+        return difference
+
+    @staticmethod
+    def get_mb_int(value):
+        result = 0
+
+        if 'MB' in value:
+            result = int(value.replace('MB', ''))
+
+        if 'GB' in value:
+            result = int(value.replace('GB', '')) * 1000
+
+        if 'TB' in value:
+            result = int(value.replace('TB', '')) * 1000000
+
+        return result
+
+    @staticmethod
+    def convert_to_highest(value):
+        result = ''
+
+        if value >= 1000000:
+            result = str(value / 1000000) + 'TB'
+
+        elif value >= 1000:
+            result = str(value / 1000) + 'GB'
+
+        else:
+            result = str(value) + 'MB'
+
+        return result
+
+
+
 
 
 

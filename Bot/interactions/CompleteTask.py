@@ -35,7 +35,6 @@ class CompleteTask:
         # adapter.log('length of process_list %s' % len(process_list))
 
         for process in process_list:
-            print('test')
             self.complete_process(process)
 
 
