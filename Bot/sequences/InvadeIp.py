@@ -5,7 +5,7 @@ from Bot.interactions.CompleteTask import CompleteTask
 from Bot.interactions.ServerAnalyse import ServerAnalyse
 
 class InvadeIp:
-    target_ip = '241.151.9.102'
+    target_ip = '250.33.59.2'
     # target_ip = '206.128.223.106'
     hack_method = 'bf'
     route_required = '/internet'
@@ -35,7 +35,7 @@ class InvadeIp:
             adapter.log('Couldn\'t log into %s' % self.target_ip)
             return False
 
-        # self.clear_enemy_log()
+        self.clear_enemy_log()
 
         self.server_analyse.analyse()
 

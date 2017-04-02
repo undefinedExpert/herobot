@@ -144,7 +144,6 @@ def insert_server_list(servers):
         if conn is not None:
             conn.close()
 
-
 def update_server(vendor_id, vendor_name):
     """ update vendor name based on the vendor id """
     sql = """ UPDATE servers
@@ -174,7 +173,6 @@ def update_server(vendor_id, vendor_name):
             conn.close()
 
     return updated_rows
-
 
 def add_app(app, server_address):
     # we should get id of server address we are looking for
