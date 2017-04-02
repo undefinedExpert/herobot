@@ -1,5 +1,7 @@
 from Bot.Shared import adapter
 
+from Bot.db.Database import connect
+from Bot.db.create_server_information import *
 
 class ServerAnalyse:
     # verify the route, it should be internet?view=software
@@ -23,8 +25,9 @@ class ServerAnalyse:
 
 
 
-    def __init__(self):
-        pass
+    def __init__(self, target):
+        self.target = target
+
 
     def analyse(self):
         # change route
@@ -36,7 +39,12 @@ class ServerAnalyse:
         software = self.get_software_names()
 
         adapter.log('Server information collected')
-        return {hdd: hdd, network: network, software: software}
+        collected = {"hdd": hdd, "network": network, "software": software}
+
+        # save in database
+        self.save_server_information(collected)
+
+        return collected
 
 
     def get_hdd(self):
@@ -88,12 +96,15 @@ class ServerAnalyse:
         for soft in software:
             # <i> installed by me
             cls = soft.attrs['class']
+            id = soft.attrs['id']
             installed = False
             my_own = False
             app_name = ''
             app_type = ''
             app_version = ''
             app_size = ''
+
+            app_ingame_id = id
 
             if 'installed' in cls:
                 installed = True
@@ -131,16 +142,22 @@ class ServerAnalyse:
                 "size": app_size,
                 "installed": installed,
                 "my_own": my_own,
+                "game_id": app_ingame_id,
             })
 
         return all_soft
 
 
+    def save_server_information(self, collected):
+        adapter.log('Adding server into database')
+        insert_server(self.target)
 
-    def save_server_information(self):
         adapter.log('Server information saved in database')
+        for app in collected['software']:
+            add_app(app, self.target)
 
-        pass
+        add_hardware(collected['hdd'], collected['network'], self.target)
+
 
     def filter_new_lines(self, array):
         temp = []

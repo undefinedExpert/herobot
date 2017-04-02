@@ -5,8 +5,11 @@ from Bot.db.create_server_information import *
 # opisem tego co ma sie znajdowac?
 
 # connect()
-# create_tables()
+create_tables()
 # insert_server('1.1.1.1')
 # insert_server('1.2.3.4')
-# insert_server('2.2.2.2')
-add_app('Basic chukasek', '2.2.2.2')
+# # insert_server('2.2.2.2')
+# add_app('Basic chukasek', '2.2.2.2')
+
+# apps  = get_apps("241.151.9.102")
+# print(apps)

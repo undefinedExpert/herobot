@@ -23,19 +23,15 @@ def create_tables():
             )
         """,
         """
-            CREATE TABLE server (
-                server_id INTEGER PRIMARY KEY,
-                server_address VARCHAR(255) NOT NULL,
-                FOREIGN KEY (server_id)
-                REFERENCES servers(server_id)
-                ON UPDATE CASCADE
-                ON DELETE CASCADE
-            )
-        """,
-        """
             CREATE TABLE apps (
-                app_id SERIAL PRIMARY KEY,
-                app_name VARCHAR(255) NOT NULL,
+                id SERIAL PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                type VARCHAR(255) NOT NULL,
+                version VARCHAR(255) NOT NULL,
+                size VARCHAR(255) NOT NULL,
+                game_id VARCHAR(255) NOT NULL,
+                installed BOOLEAN NOT NULL,
+                my_own BOOLEAN NOT NULL,
                 server_id INTEGER NOT NULL,
                 FOREIGN KEY (server_id)
                 REFERENCES servers(server_id)
@@ -44,12 +40,15 @@ def create_tables():
             )
         """,
         """
-            CREATE TABLE app (
-                app_id INTEGER PRIMARY KEY,
-                app_name VARCHAR(255) NOT NULL,
+            CREATE TABLE hardwares (
+                hardware_id SERIAL PRIMARY KEY,
+                space_all VARCHAR(255) NOT NULL,
+                space_taken VARCHAR(255) NOT NULL,
+                space_free VARCHAR(255) NOT NULL,
+                network VARCHAR(255) NOT NULL,
                 server_id INTEGER NOT NULL,
-                FOREIGN KEY (app_id)
-                REFERENCES apps(app_id)
+                FOREIGN KEY (server_id)
+                REFERENCES servers(server_id)
                 ON UPDATE CASCADE
                 ON DELETE CASCADE
             )
@@ -80,16 +79,31 @@ def insert_server(server_address):
     """ insert a new vendor into the vendors table """
     sql = """INSERT INTO servers(server_address)
              VALUES(%s) RETURNING server_id;"""
+
+    check_existence = """
+        SELECT exists(SELECT server_address FROM servers
+        WHERE server_address = '%s')
+      """ % server_address
+
     conn = None
     server_id = None
 
     try:
+
         # read database configuration
         params = config()
         # connect to the PostgreSQL database
         conn = psycopg2.connect(**params)
         # create a new cursor
         cur = conn.cursor()
+
+        # check if server already exists
+        cur.execute(check_existence)
+
+        if cur.fetchone()[0]:
+            print('Server on %s already exist' % server_address)
+            return False
+
         # execute the INSERT statement
         cur.execute(sql, (server_address,))
         # get the generated id back
@@ -162,12 +176,19 @@ def update_server(vendor_id, vendor_name):
     return updated_rows
 
 
-def add_app(app_name, server_address):
+def add_app(app, server_address):
     # we should get id of server address we are looking for
-
+    server_id = None
     # statement for inserting a new row into the parts table
     insert_app = """
-        INSERT INTO apps(app_name, server_id) VALUES(%s, %s);
+        INSERT INTO apps(name,
+                         type,
+                         version,
+                         size,
+                         installed,
+                         my_own,
+                         game_id,
+                         server_id) VALUES(%s, %s, %s, %s, %s, %s, %s, %s);
       """
 
     get_server_id = """
@@ -177,14 +198,14 @@ def add_app(app_name, server_address):
     """ % server_address
 
     check_existence = """
-        SELECT exists(SELECT app_name, apps.server_id, servers.server_id FROM servers, apps
-        WHERE
-          app_name = '%s'
-          AND
-          servers.server_id = apps.server_id)
-
-
-      """ % app_name
+        SELECT exists(
+            SELECT name FROM apps
+            WHERE
+              game_id = '%s'
+              AND
+              apps.server_id = '%s'
+          )
+      """
 
 
     conn = None
@@ -193,19 +214,29 @@ def add_app(app_name, server_address):
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
 
-        # check if software already exists
-        cur.execute(check_existence)
-
-        if cur.fetchone()[0]:
-            print('App %s already exist on %s server address' % (app_name, server_address))
-            return False
-
-        # get server id of address
+        # get id of server address
         cur.execute(get_server_id)
         server_id = cur.fetchone()[0]
 
+        # check if software already exists
+        cur.execute(check_existence % (app['game_id'], server_id))
+        print('Adding %s on server %s into database' % (app['name'], server_address))
+
+        # check if exist
+        if cur.fetchone()[0]:
+            print('App %s already exist on %s server address' % (app['name'], server_address))
+            return False
+
+
         # insert our software into apps
-        cur.execute(insert_app, (app_name, server_id))
+        cur.execute(insert_app, (app['name'],
+                                 app['type'],
+                                 app['version'],
+                                 app['size'],
+                                 app['installed'],
+                                 app['my_own'],
+                                 app['game_id'],
+                                 server_id))
 
         # commit changes
         conn.commit()
@@ -214,3 +245,266 @@ def add_app(app_name, server_address):
     finally:
         if conn is not None:
             conn.close()
+
+def get_apps(server_address):
+    # we should get id of server address we are looking for
+    server_id = None
+    # statement for inserting a new row into the parts table
+    get_apps = """
+        SELECT * FROM apps
+        WHERE apps.server_id = %s;
+      """
+
+    get_server_id = """
+      SELECT server_id, server_address
+      FROM servers
+      WHERE server_address LIKE '%s';
+    """ % server_address
+
+
+    conn = None
+    try:
+        params = config()
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()
+
+        # get id of server address
+        cur.execute(get_server_id)
+        server_id = cur.fetchone()[0]
+
+        # check if software already exists
+        cur.execute(get_apps % server_id)
+        apps = cur.fetchone()
+
+        return apps
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+# def add_hardware(app_name, server_address):
+#     # we should get id of server address we are looking for
+#     server_id = None
+#     # statement for inserting a new row into the parts table
+#     insert_app = """
+#         INSERT INTO apps(app_name, server_id) VALUES(%s, %s);
+#       """
+#
+#     get_server_id = """
+#       SELECT server_id, server_address
+#       FROM servers
+#       WHERE server_address LIKE '%s';
+#     """ % server_address
+#
+#     check_existence = """
+#         SELECT exists(
+#             SELECT app_name FROM apps
+#             WHERE
+#               app_name = '%s'
+#               AND
+#               apps.server_id = '%s'
+#           )
+#       """
+#
+#
+#     conn = None
+#     try:
+#         params = config()
+#         conn = psycopg2.connect(**params)
+#         cur = conn.cursor()
+#
+#
+#         # get server id of address
+#         cur.execute(get_server_id)
+#         server_id = cur.fetchone()[0]
+#
+#         # check if software already exists
+#         cur.execute(check_existence % (app_name, server_id))
+#         print('Adding %s on server %s into database' % (app_name, server_address))
+#
+#         # chujowo sprawdza
+#         if cur.fetchone()[0]:
+#             print('App %s already exist on %s server address' % (app_name, server_address))
+#             return False
+#
+#         # chujowo wrzuca
+#         # insert our software into apps
+#         cur.execute(insert_app, (app_name, server_id))
+#
+#         # commit changes
+#         conn.commit()
+#     except (Exception, psycopg2.DatabaseError) as error:
+#         print(error)
+#     finally:
+#         if conn is not None:
+#             conn.close()
+
+
+def add_hardware(space, network, server_address):
+    # we should get id of server address we are looking for
+    server_id = None
+    # statement for inserting a new row into the parts table
+
+    """
+                    hardware_id SERIAL PRIMARY KEY,
+                space_all VARCHAR(255) NOT NULL,
+                space_taken VARCHAR(255) NOT NULL,
+                space_free VARCHAR(255) NOT NULL,
+                network VARCHAR(255) NOT NULL,
+                server_id INTEGER NOT NULL,
+    """
+    insert_app = """
+        INSERT INTO hardwares(space_all,
+                              space_taken,
+                              space_free,
+                              network,
+                              server_id) VALUES(%s, %s, %s, %s, %s);
+      """
+
+    get_server_id = """
+      SELECT server_id, server_address
+      FROM servers
+      WHERE server_address LIKE '%s';
+    """ % server_address
+
+    check_existence = """
+        SELECT exists(
+            SELECT hardware_id FROM hardwares
+            WHERE
+              space_free = '%s'
+              AND
+              hardwares.server_id = '%s'
+          )
+      """
+
+
+    conn = None
+    try:
+        params = config()
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()
+
+        # get id of server address
+        cur.execute(get_server_id)
+        server_id = cur.fetchone()[0]
+
+        # check if software already exists
+        cur.execute(check_existence % (space['free'], server_id))
+        print('Pushing  hardware information of %s server into database' % (server_address))
+
+        # check if exist
+        if cur.fetchone()[0]:
+            print('Space didnt change' % (space['free'], server_address))
+            return False
+
+
+        # insert our software into apps
+        cur.execute(insert_app, (space['all'],
+                                 space['taken'],
+                                 space['free'],
+                                 network,
+                                 server_id))
+
+        # commit changes
+        conn.commit()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+def get_hardware(server_address):
+    # we should get id of server address we are looking for
+    server_id = None
+    # statement for inserting a new row into the parts table
+    get_apps = """
+        SELECT * FROM apps
+        WHERE apps.server_id = %s;
+      """
+
+    get_server_id = """
+      SELECT server_id, server_address
+      FROM servers
+      WHERE server_address LIKE '%s';
+    """ % server_address
+
+
+    conn = None
+    try:
+        params = config()
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()
+
+        # get id of server address
+        cur.execute(get_server_id)
+        server_id = cur.fetchone()[0]
+
+        # check if software already exists
+        cur.execute(get_apps % server_id)
+        apps = cur.fetchone()
+
+        return apps
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+# def add_hardware(app_name, server_address):
+#     # we should get id of server address we are looking for
+#     server_id = None
+#     # statement for inserting a new row into the parts table
+#     insert_app = """
+#         INSERT INTO apps(app_name, server_id) VALUES(%s, %s);
+#       """
+#
+#     get_server_id = """
+#       SELECT server_id, server_address
+#       FROM servers
+#       WHERE server_address LIKE '%s';
+#     """ % server_address
+#
+#     check_existence = """
+#         SELECT exists(
+#             SELECT app_name FROM apps
+#             WHERE
+#               app_name = '%s'
+#               AND
+#               apps.server_id = '%s'
+#           )
+#       """
+#
+#
+#     conn = None
+#     try:
+#         params = config()
+#         conn = psycopg2.connect(**params)
+#         cur = conn.cursor()
+#
+#
+#         # get server id of address
+#         cur.execute(get_server_id)
+#         server_id = cur.fetchone()[0]
+#
+#         # check if software already exists
+#         cur.execute(check_existence % (app_name, server_id))
+#         print('Adding %s on server %s into database' % (app_name, server_address))
+#
+#         # chujowo sprawdza
+#         if cur.fetchone()[0]:
+#             print('App %s already exist on %s server address' % (app_name, server_address))
+#             return False
+#
+#         # chujowo wrzuca
+#         # insert our software into apps
+#         cur.execute(insert_app, (app_name, server_id))
+#
+#         # commit changes
+#         conn.commit()
+#     except (Exception, psycopg2.DatabaseError) as error:
+#         print(error)
+#     finally:
+#         if conn is not None:
+#             conn.close()
+
+def get_server_information(server_address):
+    pass
