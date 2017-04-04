@@ -5,7 +5,7 @@ from Bot.interactions.CompleteTask import CompleteTask
 from Bot.interactions.ServerAnalyse import ServerAnalyse
 
 class InvadeIp:
-    target_ip = '250.33.59.2'
+    target_ip = '12.196.217.143'
     # target_ip = '206.128.223.106'
     hack_method = 'bf'
     route_required = '/internet'
@@ -39,15 +39,14 @@ class InvadeIp:
 
         self.server_analyse.analyse()
 
-        adapter.log('disconnecting from server %s ' % self.target_ip)
-        self.disconnect()
-        # check enemy machine (network speed, disk space, apps installed)
-        # save collected data
+
         # upload software,
         # wait until uploaded software done
         # run this software
         # remove only those information which contian my ip
 
+        adapter.log('disconnecting from server %s ' % self.target_ip)
+        self.disconnect()
     def disconnect(self):
         self.connection.disconnect()
 
@@ -56,7 +55,7 @@ class InvadeIp:
         # if he does not seem to be online, upload virus
         # else check software and log later
         # Also we should only delete our ip from log, just entire log
-
+        # '2017-04-04 16:43 - [182.201.16.201] logged in as root'
         self.log_form.run()
 
         # >go to task route

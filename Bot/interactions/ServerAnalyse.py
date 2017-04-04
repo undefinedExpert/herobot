@@ -4,27 +4,6 @@ from Bot.db.Database import connect
 from Bot.db.create_server_information import *
 
 class ServerAnalyse:
-    # verify the route, it should be internet?view=software
-    # gathering server information:
-        # checking the hdd size
-        # check the internet connection
-        # software installed
-        # available software
-    # save the information in database
-
-    # open route
-    # Select hdd size
-        # push the size into server_information dict
-        # push the available size into server_information dict
-    # Select internet connection
-        # push the speed of it into server_information dict
-    # Get all software names
-        # if software is running, mark as 'installed'
-        # get each software and push into array, inside of our server_information
-    # return server_information
-
-
-
     def __init__(self, target):
         self.target = target
 

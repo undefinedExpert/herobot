@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f21eb3ed-6f5d-446b-ae0d-72f0563da5a2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/definitions.py" afterPath="$PROJECT_DIR$/Bot/definitions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/interactions/CompleteTask.py" afterPath="$PROJECT_DIR$/Bot/interactions/CompleteTask.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/interactions/Connection.py" afterPath="$PROJECT_DIR$/Bot/interactions/Connection.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/interactions/ServerAnalyse.py" afterPath="$PROJECT_DIR$/Bot/interactions/ServerAnalyse.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/runtime_helper.py" afterPath="$PROJECT_DIR$/Bot/runtime_helper.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/sequences/InvadeIp.py" afterPath="$PROJECT_DIR$/Bot/sequences/InvadeIp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geckodriver.log" afterPath="$PROJECT_DIR$/geckodriver.log" />
     </list>
@@ -25,8 +22,8 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/hackerexperiance$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1490479437722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hackerexperiance$Runtime_helper.coverage" NAME="Runtime_helper Coverage Results" MODIFIED="1491135855989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hackerexperiance$Start_bot.coverage" NAME="Start bot Coverage Results" MODIFIED="1491118171485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hackerexperiance$Runtime_helper.coverage" NAME="Runtime_helper Coverage Results" MODIFIED="1491161419782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hackerexperiance$Start_bot.coverage" NAME="Start bot Coverage Results" MODIFIED="1491323757336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,146 +33,110 @@
     <favorites_list name="hackerexperiance" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7592943">
+    <splitter split-orientation="horizontal" split-proportion="0.44868422">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.7701934">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="Browser.py" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/Bot/browser/Browser.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="ServerAnalyse.py" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/Bot/interactions/ServerAnalyse.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="452">
-                      <caret line="142" column="12" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
-                      <folding>
-                        <marker date="1491118979361" expanded="false" signature="2034:4224" placeholder="..." />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="database_config.ini" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/Bot/database_config.ini">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="72">
-                      <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/Bot/db/Database.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="90">
-                      <caret line="5" column="16" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="create_server_information.py" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/Bot/db/create_server_information.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="899">
-                      <caret line="214" column="25" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
-                      <folding>
-                        <element signature="e#19#34#0" expanded="true" />
-                        <element signature="e#434#2326#0" expanded="false" />
-                        <element signature="e#2368#3230#0" expanded="false" />
-                        <element signature="e#3270#3975#0" expanded="false" />
-                        <element signature="e#4025#4922#0" expanded="false" />
-                        <marker date="1491135853409" expanded="true" signature="547:682" placeholder="CREATE TABLE... servers" />
-                        <marker date="1491135853409" expanded="true" signature="720:1010" placeholder="CREATE TABLE... server" />
-                        <marker date="1491135853409" expanded="true" signature="1048:1370" placeholder="CREATE TABLE... apps" />
-                        <marker date="1491135853409" expanded="true" signature="1408:1721" placeholder="CREATE TABLE... app" />
-                        <marker date="1491135853409" expanded="true" signature="2432:2511" placeholder="INSERT INTO servers... " />
-                        <marker date="1491135853409" expanded="true" signature="3337:3383" placeholder="INSERT INTO servers... " />
-                        <marker date="1491135853409" expanded="true" signature="4089:4180" placeholder="UPDATE serve... " />
-                        <marker date="1491135853409" expanded="true" signature="5115:5167" placeholder="INSERT INTO apps... " />
-                        <marker date="1491135853409" expanded="true" signature="5210:5294" placeholder="SELECT serve... servers" />
-                        <marker date="1491135853409" expanded="true" signature="5210:5298" placeholder="SELECT serve... servers" />
-                        <marker date="1491135853409" expanded="true" signature="5360:5543" placeholder="SELECT exist... " />
-                        <marker date="1491135853409" expanded="true" signature="5374:5542" placeholder="SELECT app_n... servers" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="runtime_helper.py" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/Bot/runtime_helper.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="198">
-                      <caret line="11" column="23" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="23" />
-                      <folding>
-                        <element signature="e#0#35#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file leaf-file-name="create_server_information.py" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/Bot/db/create_server_information.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="-577">
-                      <caret line="49" column="25" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="25" />
-                      <folding>
-                        <element signature="e#19#34#0" expanded="true" />
-                        <element signature="e#1773#2181#0" expanded="false" />
-                        <marker date="1491135853409" expanded="true" signature="547:682" placeholder="CREATE TABLE... servers" />
-                        <marker date="1491135853409" expanded="true" signature="720:1010" placeholder="CREATE TABLE... server" />
-                        <marker date="1491135853409" expanded="true" signature="1048:1370" placeholder="CREATE TABLE... apps" />
-                        <marker date="1491135853409" expanded="true" signature="1408:1721" placeholder="CREATE TABLE... app" />
-                        <marker date="1491135853409" expanded="true" signature="2432:2502" placeholder="INSERT INTO servers... " />
-                        <marker date="1491135853409" expanded="true" signature="2432:2511" placeholder="INSERT INTO servers... " />
-                        <marker date="1491135853409" expanded="true" signature="3337:3383" placeholder="INSERT INTO servers... " />
-                        <marker date="1491135853409" expanded="true" signature="4089:4180" placeholder="UPDATE serve... " />
-                        <marker date="1491135853409" expanded="true" signature="5210:5294" placeholder="SELECT serve... servers" />
-                        <marker date="1491135853409" expanded="true" signature="5210:5298" placeholder="SELECT serve... servers" />
-                        <marker date="1491135853409" expanded="true" signature="5210:5300" placeholder="SELECT serve... servers" />
-                        <marker date="1491135853409" expanded="true" signature="5542:5543" placeholder="SELECT exist... " />
-                        <marker date="1491135853409" expanded="true" signature="5542:6038" placeholder="SELECT exist... " />
-                        <marker date="1491135853409" expanded="true" signature="6039:6134" placeholder="insert our s... " />
-                        <marker date="1491135853409" expanded="true" signature="6135:6316" placeholder="commit chang... " />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
-      </split-first>
-      <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ServerAnalyse.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Bot/interactions/ServerAnalyse.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="305">
-                  <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
+                <state relative-caret-position="702">
+                  <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#30#0" expanded="true" />
+                    <element signature="e#746#1300#0" expanded="false" />
+                    <element signature="e#1550#3839#0" expanded="false" />
+                    <element signature="e#3900#4193#0" expanded="false" />
+                    <element signature="e#4243#4406#0" expanded="false" />
+                    <element signature="e#4458#4924#0" expanded="false" />
+                    <element signature="e#4979#5260#0" expanded="false" />
+                    <element signature="e#5323#5565#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Connection.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Bot/interactions/Connection.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="448">
+                  <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="select_apps.sql" pinned="false" current-in-tab="true">
-            <entry file="file://$USER_HOME$/Desktop/hacker/select_apps.sql">
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="create_server_information.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Bot/db/create_server_information.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="198">
-                  <caret line="11" column="13" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="13" />
+                <state relative-caret-position="2016">
+                  <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#19#34#0" expanded="true" />
+                    <element signature="e#1872#2280#0" expanded="false" />
+                    <element signature="e#3720#4425#0" expanded="false" />
+                    <element signature="e#4474#5371#0" expanded="false" />
+                    <element signature="e#5411#7458#0" expanded="false" />
+                    <element signature="e#8383#8428#0" expanded="false" />
+                    <element signature="e#12269#13158#0" expanded="false" />
+                    <element signature="e#13158#13203#0" expanded="false" />
+                    <marker date="1491162415684" expanded="true" signature="547:682" placeholder="CREATE TABLE... servers" />
+                    <marker date="1491162415684" expanded="true" signature="720:1301" placeholder="CREATE TABLE... apps" />
+                    <marker date="1491162415684" expanded="true" signature="1339:1820" placeholder="CREATE TABLE... apps" />
+                    <marker date="1491162415684" expanded="true" signature="2054:2153" placeholder="create table... one" />
+                    <marker date="1491162415684" expanded="true" signature="2154:2239" placeholder="close commun... " />
+                    <marker date="1491162415684" expanded="true" signature="2531:2601" placeholder="INSERT INTO servers... " />
+                    <marker date="1491162415684" expanded="true" signature="2531:2610" placeholder="INSERT INTO servers... " />
+                    <marker date="1491162415684" expanded="true" signature="2650:2736" placeholder="SELECT exist... " />
+                    <marker date="1491162415684" expanded="true" signature="2664:2734" placeholder="SELECT serve... servers" />
+                    <marker date="1491162415684" expanded="true" signature="2664:2736" placeholder="SELECT serve... servers" />
+                    <marker date="1491162415684" expanded="true" signature="3787:3833" placeholder="INSERT INTO servers... " />
+                    <marker date="1491162415684" expanded="true" signature="4538:4629" placeholder="UPDATE serve... " />
+                    <marker date="1491162415684" expanded="true" signature="5578:5874" placeholder="INSERT INTO apps... " />
+                    <marker date="1491162415684" expanded="true" signature="5917:6005" placeholder="SELECT serve... servers" />
+                    <marker date="1491162415684" expanded="true" signature="6006:6007" placeholder="SELECT serve... servers" />
+                    <marker date="1491162415684" expanded="true" signature="6067:6228" placeholder="SELECT exist... " />
+                    <marker date="1491162415684" expanded="true" signature="6094:6211" placeholder="SELECT app_n... apps" />
+                    <marker date="1491162415684" expanded="true" signature="6094:6212" placeholder="SELECT app_n... apps" />
+                    <marker date="1491162415684" expanded="true" signature="6094:6216" placeholder="SELECT app_n... apps" />
+                    <marker date="1491162415684" expanded="true" signature="6227:6228" placeholder="SELECT exist... " />
+                    <marker date="1491162415684" expanded="false" signature="7489:10031" placeholder="..." />
+                    <marker date="1491162415684" expanded="true" signature="7659:7711" placeholder="SELECT * FRO... apps" />
+                    <marker date="1491162415684" expanded="true" signature="7665:7709" placeholder="select * fro... apps" />
+                    <marker date="1491162415684" expanded="true" signature="7754:7842" placeholder="SELECT serve... servers" />
+                    <marker date="1491162415684" expanded="true" signature="8610:8662" placeholder="INSERT INTO apps... " />
+                    <marker date="1491162415684" expanded="true" signature="8712:8804" placeholder="SELECT serve... servers" />
+                    <marker date="1491162415684" expanded="true" signature="8873:9051" placeholder="SELECT exist... " />
+                    <marker date="1491162415684" expanded="true" signature="8902:9037" placeholder="SELECT app_n... apps" />
+                    <marker date="1491162415684" expanded="true" signature="10565:10789" placeholder="INSERT INTO hardwares... " />
+                    <marker date="1491162415684" expanded="true" signature="10832:10920" placeholder="SELECT serve... servers" />
+                    <marker date="1491162415684" expanded="true" signature="10982:11163" placeholder="SELECT exist... " />
+                    <marker date="1491162415684" expanded="true" signature="11009:11151" placeholder="SELECT hardw... hardwares" />
+                    <marker date="1491162415684" expanded="true" signature="12434:12486" placeholder="SELECT * FRO... apps" />
+                    <marker date="1491162415684" expanded="true" signature="12529:12617" placeholder="SELECT serve... servers" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="InvadeIp.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Bot/sequences/InvadeIp.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="701">
+                  <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Bot/db/Database.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="5" column="16" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -234,11 +195,8 @@
         <option value="$PROJECT_DIR$/Bot/Shared.py" />
         <option value="$PROJECT_DIR$/Bot/browser/Browser.py" />
         <option value="$PROJECT_DIR$/Bot/interactions/Analyse.py" />
-        <option value="$PROJECT_DIR$/Bot/interactions/Connection.py" />
         <option value="$PROJECT_DIR$/Bot/tmp/cookies.json" />
-        <option value="$PROJECT_DIR$/Bot/sequences/InvadeIp.py" />
         <option value="$PROJECT_DIR$/Bot/interactions/CompleteTask.py" />
-        <option value="$PROJECT_DIR$/Bot/interactions/ServerAnalyse.py" />
         <option value="$PROJECT_DIR$/Bot/database_config.ini" />
         <option value="$PROJECT_DIR$/Bot/definitions.py" />
         <option value="$PROJECT_DIR$/Bot/db/config.py" />
@@ -246,6 +204,10 @@
         <option value="$USER_HOME$/Desktop/hacker/select_apps.sql" />
         <option value="$PROJECT_DIR$/Bot/runtime_helper.py" />
         <option value="$PROJECT_DIR$/Bot/db/create_server_information.py" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/Bot/interactions/ServerAnalyse.py" />
+        <option value="$PROJECT_DIR$/Bot/interactions/Connection.py" />
+        <option value="$PROJECT_DIR$/Bot/sequences/InvadeIp.py" />
       </list>
     </option>
   </component>
@@ -316,6 +278,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -362,13 +325,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="sequences" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hackerexperiance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hackerexperiance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interactions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hackerexperiance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hackerexperiance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -410,7 +408,7 @@
       <recent name="D:\sandbox\hackerexperiance" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Runtime_helper">
+  <component name="RunManager" selected="Python.Start bot">
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="" />
@@ -825,30 +823,51 @@
       <option name="project" value="LOCAL" />
       <updated>1491135894887</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="code cleaning, Bot now can scan what apps are installed on target">
+      <created>1491135937205</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1491135937205</updated>
+    </task>
+    <task id="LOCAL-00022" summary="saving server_information in database">
+      <created>1491162365532</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1491162365532</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Update">
+      <created>1491164019466</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1491164019466</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15405117" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18976545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32193732" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953465" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32953465" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30864197" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13409962" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30009496" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39411205" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953465" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25766283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39601138" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30864197" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -903,7 +922,10 @@
     <MESSAGE value="Improve invade_ip, checks for is logged, allow to hack enemy ip" />
     <MESSAGE value="Adding server analyse mechanism" />
     <MESSAGE value="Creating first DB version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating first DB version" />
+    <MESSAGE value="code cleaning, Bot now can scan what apps are installed on target" />
+    <MESSAGE value="saving server_information in database" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -917,18 +939,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="219" />
+      <option name="time" value="244" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../python_multiplication_table_game/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../python_multiplication_table_game/playground.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
@@ -1006,13 +1021,6 @@
     <entry file="file://$PROJECT_DIR$/Bot/interactions/HackIp.py" />
     <entry file="file://$PROJECT_DIR$/Bot/interactions/LogOutIp.py" />
     <entry file="file://$PROJECT_DIR$/Bot/interactions/UploadProgram.py" />
-    <entry file="file://$PROJECT_DIR$/Bot/sequences/ClearLog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Bot/Shared.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -1033,17 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/interactions/Connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="36" column="101" selection-start-line="36" selection-start-column="101" selection-end-line="36" selection-end-column="101" />
-          <folding>
-            <element signature="e#0#30#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1051,15 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/interactions/Programs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,7 +1063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1083,23 +1070,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="15" column="21" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/sequences/InvadeIp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/interactions/CompleteTask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,7 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1115,9 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1125,7 +1091,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bot/database_config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bot/interactions/CompleteTask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bot/sequences/ClearLog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1133,7 +1119,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bot/browser/Browser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bot/interactions/Programs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bot/runtime_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1145,65 +1159,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/database_config.ini">
+    <entry file="file://$PROJECT_DIR$/Bot/db/create_server_information.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="2016">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#34#0" expanded="true" />
+            <element signature="e#1872#2280#0" expanded="false" />
+            <element signature="e#3720#4425#0" expanded="false" />
+            <element signature="e#4474#5371#0" expanded="false" />
+            <element signature="e#5411#7458#0" expanded="false" />
+            <element signature="e#8383#8428#0" expanded="false" />
+            <element signature="e#12269#13158#0" expanded="false" />
+            <element signature="e#13158#13203#0" expanded="false" />
+            <marker date="1491162415684" expanded="true" signature="547:682" placeholder="CREATE TABLE... servers" />
+            <marker date="1491162415684" expanded="true" signature="720:1301" placeholder="CREATE TABLE... apps" />
+            <marker date="1491162415684" expanded="true" signature="1339:1820" placeholder="CREATE TABLE... apps" />
+            <marker date="1491162415684" expanded="true" signature="2054:2153" placeholder="create table... one" />
+            <marker date="1491162415684" expanded="true" signature="2154:2239" placeholder="close commun... " />
+            <marker date="1491162415684" expanded="true" signature="2531:2601" placeholder="INSERT INTO servers... " />
+            <marker date="1491162415684" expanded="true" signature="2531:2610" placeholder="INSERT INTO servers... " />
+            <marker date="1491162415684" expanded="true" signature="2650:2736" placeholder="SELECT exist... " />
+            <marker date="1491162415684" expanded="true" signature="2664:2734" placeholder="SELECT serve... servers" />
+            <marker date="1491162415684" expanded="true" signature="2664:2736" placeholder="SELECT serve... servers" />
+            <marker date="1491162415684" expanded="true" signature="3787:3833" placeholder="INSERT INTO servers... " />
+            <marker date="1491162415684" expanded="true" signature="4538:4629" placeholder="UPDATE serve... " />
+            <marker date="1491162415684" expanded="true" signature="5578:5874" placeholder="INSERT INTO apps... " />
+            <marker date="1491162415684" expanded="true" signature="5917:6005" placeholder="SELECT serve... servers" />
+            <marker date="1491162415684" expanded="true" signature="6006:6007" placeholder="SELECT serve... servers" />
+            <marker date="1491162415684" expanded="true" signature="6067:6228" placeholder="SELECT exist... " />
+            <marker date="1491162415684" expanded="true" signature="6094:6211" placeholder="SELECT app_n... apps" />
+            <marker date="1491162415684" expanded="true" signature="6094:6212" placeholder="SELECT app_n... apps" />
+            <marker date="1491162415684" expanded="true" signature="6094:6216" placeholder="SELECT app_n... apps" />
+            <marker date="1491162415684" expanded="true" signature="6227:6228" placeholder="SELECT exist... " />
+            <marker date="1491162415684" expanded="false" signature="7489:10031" placeholder="..." />
+            <marker date="1491162415684" expanded="true" signature="7659:7711" placeholder="SELECT * FRO... apps" />
+            <marker date="1491162415684" expanded="true" signature="7665:7709" placeholder="select * fro... apps" />
+            <marker date="1491162415684" expanded="true" signature="7754:7842" placeholder="SELECT serve... servers" />
+            <marker date="1491162415684" expanded="true" signature="8610:8662" placeholder="INSERT INTO apps... " />
+            <marker date="1491162415684" expanded="true" signature="8712:8804" placeholder="SELECT serve... servers" />
+            <marker date="1491162415684" expanded="true" signature="8873:9051" placeholder="SELECT exist... " />
+            <marker date="1491162415684" expanded="true" signature="8902:9037" placeholder="SELECT app_n... apps" />
+            <marker date="1491162415684" expanded="true" signature="10565:10789" placeholder="INSERT INTO hardwares... " />
+            <marker date="1491162415684" expanded="true" signature="10832:10920" placeholder="SELECT serve... servers" />
+            <marker date="1491162415684" expanded="true" signature="10982:11163" placeholder="SELECT exist... " />
+            <marker date="1491162415684" expanded="true" signature="11009:11151" placeholder="SELECT hardw... hardwares" />
+            <marker date="1491162415684" expanded="true" signature="12434:12486" placeholder="SELECT * FRO... apps" />
+            <marker date="1491162415684" expanded="true" signature="12529:12617" placeholder="SELECT serve... servers" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Bot/interactions/ServerAnalyse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="142" column="12" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
+        <state relative-caret-position="702">
+          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding>
-            <marker date="1491118979361" expanded="false" signature="2034:4224" placeholder="..." />
+            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#746#1300#0" expanded="false" />
+            <element signature="e#1550#3839#0" expanded="false" />
+            <element signature="e#3900#4193#0" expanded="false" />
+            <element signature="e#4243#4406#0" expanded="false" />
+            <element signature="e#4458#4924#0" expanded="false" />
+            <element signature="e#4979#5260#0" expanded="false" />
+            <element signature="e#5323#5565#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/browser/Browser.py">
+    <entry file="file://$PROJECT_DIR$/Bot/interactions/Connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="448">
+          <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/runtime_helper.py">
+    <entry file="file://$PROJECT_DIR$/Bot/sequences/InvadeIp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/db/create_server_information.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="214" column="25" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
-          <folding>
-            <element signature="e#19#34#0" expanded="true" />
-            <element signature="e#434#2326#0" expanded="false" />
-            <element signature="e#2368#3230#0" expanded="false" />
-            <element signature="e#3270#3975#0" expanded="false" />
-            <element signature="e#4025#4922#0" expanded="false" />
-            <marker date="1491135853409" expanded="true" signature="547:682" placeholder="CREATE TABLE... servers" />
-            <marker date="1491135853409" expanded="true" signature="720:1010" placeholder="CREATE TABLE... server" />
-            <marker date="1491135853409" expanded="true" signature="1048:1370" placeholder="CREATE TABLE... apps" />
-            <marker date="1491135853409" expanded="true" signature="1408:1721" placeholder="CREATE TABLE... app" />
-            <marker date="1491135853409" expanded="true" signature="2432:2511" placeholder="INSERT INTO servers... " />
-            <marker date="1491135853409" expanded="true" signature="3337:3383" placeholder="INSERT INTO servers... " />
-            <marker date="1491135853409" expanded="true" signature="4089:4180" placeholder="UPDATE serve... " />
-            <marker date="1491135853409" expanded="true" signature="5115:5167" placeholder="INSERT INTO apps... " />
-            <marker date="1491135853409" expanded="true" signature="5210:5294" placeholder="SELECT serve... servers" />
-            <marker date="1491135853409" expanded="true" signature="5210:5298" placeholder="SELECT serve... servers" />
-            <marker date="1491135853409" expanded="true" signature="5360:5543" placeholder="SELECT exist... " />
-            <marker date="1491135853409" expanded="true" signature="5374:5542" placeholder="SELECT app_n... servers" />
-          </folding>
+        <state relative-caret-position="701">
+          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

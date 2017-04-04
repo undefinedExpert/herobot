@@ -61,14 +61,22 @@ class Connection:
                 complete_task = CompleteTask(task_desc='Crack server %s' % self.target)
                 complete_task.run()
                 auth_information = adapter.window.select('.form-actions > span')
+
+                win = adapter.window
+                error = adapter.window.select('.alert')
+
             else:
                 return False
 
         # login using user name and password
-        adapter.browser.change_route('/internet?action=login', silent=False)
-        username = auth_information[0].text.replace('Username: ', '')
-        password = auth_information[1].text.replace('Password: ', '')
-        adapter.log('Target username: %s, target password: %s' % (username, password))
+        try:
+            adapter.browser.change_route('/internet?action=login', silent=False)
+            username = auth_information[0].text.replace('Username: ', '')
+            password = auth_information[1].text.replace('Password: ', '')
+            adapter.log('Target username: %s, target password: %s' % (username, password))
+        except IndexError:
+            adapter.log('Username and password wasnt available.')
+            return False
 
         upcoming_route = '/internet?action=login&user=%s&pass=%s' % (username, password)
         adapter.browser.change_route(upcoming_route, silent=False)
@@ -86,10 +94,10 @@ class Connection:
         # try to hack
         adapter.browser.change_route('/internet?action=hack&method=bf')
 
-        hack_failed = adapter.window.select('alert alert-error')
-        browser = adapter.browser
+        hack_failed = adapter.window.select('.alert.alert-error')
         if len(hack_failed) > 0:
-            adapter.log('Cannot hack %s' % self.target)
+            error = hack_failed[0].find('strong').nextSibling
+            adapter.log('Error occur:%s' % error)
             return False
 
         return True

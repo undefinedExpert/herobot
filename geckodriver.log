@@ -242,3 +242,11 @@ JavaScript error: https://legacy.hackerexperience.com/js/jquery.min.js.pagespeed
 1491161495994	Marionette	INFO	New connections will no longer be accepted
 [Child 446456] WARNING: pipe error: 232: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 512
 [Child 446456] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1491322617389	geckodriver	INFO	Listening on 127.0.0.1:11759
+1491322619419	mozprofile::profile	INFO	Using profile path C:\Users\Lansky\AppData\Local\Temp\rust_mozprofile.WK1Xs9tXFvcM
+1491322619424	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args []
+1491322619451	geckodriver::marionette	INFO	Connecting to Marionette on localhost:11765
+1491322620715	Marionette	INFO	Listening on port 11765
+1491322621665	Marionette	WARN	TLS certificate errors will be ignored for this session
+1491322651056	Marionette	INFO	New connections will no longer be accepted
+[Child 72116] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
